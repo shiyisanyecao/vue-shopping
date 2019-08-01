@@ -1,39 +1,6 @@
-<template>
-<div id="BP_subfieldCon" class="ui-subfield-con" v-if="show" transition="menuleft">
-    <div class="sf-close" @click="closeMenuEvent">
-        <span></span>
-    </div>
-    <ul class="sf-list clearfix">
-        <li><a v-link="{name:'home'}">首页</a></li>
-        <li v-for="item in list"><a v-link="{name:'goods',params:{mt:item.mt,type:item.type}}">{{item.title}}</a></li>
-    </ul>
-    <div class="sf-login">
-        <p id="BP_Login" v-link="{name:'login'}"><i class="icon-usr"></i>请登录</p>
-    </div>
-</div>
-</template>
-
-<script>
-export default {
-    props: ['show','list'],
-    ready () {
-        const self = this;
-        document.addEventListener('click',function(e) {
-            self.$parent.menu.show = false;
-            self.$parent.mask = false;
-        })
-    },
-    methods: {
-        closeMenuEvent() {
-            this.$parent.menu.show = false;
-            this.$parent.mask = false;
-        }
-    }
-}
-</script>
-
 <style>
-.ui-subfield-con .sf-login p .icon-usr {
+
+  .ui-subfield-con .sf-login p .icon-usr {
     background: url("../assets/images/home/user_login.jpeg") no-repeat;
     background-size: 100% 100%;
     width: .35rem;
@@ -131,4 +98,51 @@ export default {
     -webkit-transform: translate3d(-5.5rem,0,0);
     transform: translate3d(-5.5rem,0,0);
   }
+
 </style>
+
+<template>
+
+  <div id="BP_subfieldCon" class="ui-subfield-con" v-if="show" transition="menuleft">
+
+    <div class="sf-close" @click="closeMenuEvent">
+      <span></span>
+    </div>
+
+    <ul class="sf-list clearfix">
+
+      <li><a v-link="{name:'home'}">首页</a></li>
+      <li v-for="item in list"><a v-link="{name:'goods',params:{mt:item.mt,type:item.type} }">{{item.title}}</a>
+      </li>
+    </ul>
+    <div class="sf-login">
+      <p id="BP_Login" v-link="{name:'login'}"><i class="icon-usr"></i>请登录</p>
+    </div>
+
+  </div>
+
+</template>
+
+<script>
+
+  export default {
+    props: ["show","list"],
+    ready () {
+      const self = this
+      document.addEventListener("click",function(e){
+        //关闭左侧菜单和遮罩层
+        self.$parent.menu.show = false;
+        self.$parent.mask = false;
+      })
+
+    },
+    methods:{
+      //关闭菜单
+      closeMenuEvent(){
+        this.$parent.menu.show = false
+        this.$parent.mask = false
+      }
+    }
+  }
+
+</script>

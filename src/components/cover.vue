@@ -1,24 +1,6 @@
-<template>
-    <div id="loading-cover" class="vertical-center text-center" :class="show?'':'done'">
-        <a href="#" class="logo-img">
-            <img src="../../src/assets/images/common/logo.png"/>
-        </a>
-        <div class="inner">
-            <i class="icon-load"></i>
-            <span>加载中</span>
-        </div>
-    </div>
-</template>
-
-<script>
-export default {
-    props: ['show']
-}
-
-</script>
 
 <style>
-.vertical-center {
+     .vertical-center {
         display: -webkit-box;
         display: -moz-box;
         display: box;
@@ -83,3 +65,19 @@ export default {
         line-height: 32px;
     }
 </style>
+<template>
+    <div id=loading-cover class="vertical-center text-center" :class="show?'':'done'">
+        <a href="#" class="logo-img">
+            <img src="../../src/assets/images/common/logo.png" class="inline">
+        </a>
+        <div class="inner">
+            <i class="icon-load"></i>
+            <span>加载中</span>
+        </div>
+    </div>
+</template>
+<script>
+    export default {
+        props:['show']
+    }
+</script>
