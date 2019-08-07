@@ -66,7 +66,7 @@
     }
 </style>
 <template>
-    <div id=loading-cover class="vertical-center text-center" :class="show?'':'done'">
+    <div id="loading-cover" class="vertical-center text-center" :class="show?'':'done'">
         <a href="#" class="logo-img">
             <img src="../../src/assets/images/common/logo.png" class="inline">
         </a>
