@@ -1,8 +1,7 @@
 {
   "name": "vue-shopping",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "andylei18 <dl375074900@qq.com>",
+  "description": " ",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
